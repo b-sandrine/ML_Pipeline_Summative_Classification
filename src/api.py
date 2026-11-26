@@ -138,7 +138,7 @@ def stats() -> dict:
 
 @lru_cache(maxsize=1)
 def _dataset_features() -> list[dict]:
-    return pp.image_statistics(per_class=120)
+    return pp.cached_image_statistics(per_class=120, refresh=True)
 
 
 @app.get("/features", tags=["visualisation"])

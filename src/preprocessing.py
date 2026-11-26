@@ -38,6 +38,7 @@ TEST_DIR = DATA_DIR / "test"
 MODELS_DIR = ROOT / "models"
 FEATURE_STORE_PATH = MODELS_DIR / "feature_store.npz"
 STATE_PATH = MODELS_DIR / "state.json"
+IMAGE_STATS_PATH = MODELS_DIR / "image_stats.json"
 
 DATASET_URL = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
 IMAGE_SIZE = 160
@@ -368,3 +369,18 @@ def image_statistics(directory: Path = TRAIN_DIR, per_class: int = 150, seed: in
                 }
             )
     return rows
+
+
+def cached_image_statistics(per_class: int = 120, refresh: bool = False) -> list[dict]:
+    """Image statistics for the UI. Computed from ``data/train`` when images are
+    present (and saved to ``models/image_stats.json``); otherwise the saved copy
+    is used, so containers without raw images can still draw the charts."""
+    if list_images(TRAIN_DIR) and (refresh or not IMAGE_STATS_PATH.exists()):
+        rows = image_statistics(per_class=per_class)
+        IMAGE_STATS_PATH.parent.mkdir(parents=True, exist_ok=True)
+        IMAGE_STATS_PATH.write_text(json.dumps(rows))
+        return rows
+    try:
+        return json.loads(IMAGE_STATS_PATH.read_text())
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []

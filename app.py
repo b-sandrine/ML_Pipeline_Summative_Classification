@@ -116,6 +116,9 @@ elif page == "Data visualisations":
     st.info("Flower classes hold hundreds of images each, but `not_flower` has very few. The model sees "
             "it rarely, so it is the class most likely to be misclassified. Upload more examples to fix this.")
 
+    if not feats["rows"]:
+        st.warning("No image statistics available yet. Add training images and retrain.")
+        st.stop()
     df = pd.DataFrame(feats["rows"])
     st.caption(f"Feature plots use a random sample of {len(df)} training images.")
 
