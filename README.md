@@ -5,8 +5,8 @@ An end-to-end machine-learning pipeline for **image classification**: data acqui
 | | |
 |---|---|
 | **Video demo** | _TODO: add YouTube link_ |
-| **Live URL** | _TODO: add deployed URL (UI on port 8501, API docs at `/docs`)_ |
-| **GitHub repo** | _TODO: add repository URL_ |
+| **Live URL (UI)** | https://summative-machine-learning-pipeline-prrd.onrender.com/ |
+| **GitHub repo** | https://github.com/b-sandrine/Summative_Machine_Learning_Pipeline_Module |
 
 ## Project description
 
@@ -89,6 +89,10 @@ docker compose up -d --build --scale api=3     # UI: :8501, API (through nginx):
 `nginx` load-balances requests round-robin across the `api` replicas; `models/` and `data/` are shared volumes, so a retrain in one container is picked up by all of them (the model file's modification time is checked on each request).
 
 To deploy on a cloud VM (AWS EC2, GCP Compute Engine, Azure VM, DigitalOcean...): install Docker, clone the repo, open ports 8501 and 8000, and run the command above. Record the public URL at the top of this README.
+
+### Live deployment on Render
+
+The app is deployed on [Render](https://render.com) from `render.yaml` (a Blueprint): `flower-api` (FastAPI + TensorFlow, Standard plan) and `flower-ui` (Streamlit). The UI reaches the API over Render's private network. Render's disk is ephemeral, so uploaded images and retrained models are lost when a service restarts or redeploys, and it returns to the committed model.
 
 ## Flood-request simulation (Locust)
 
