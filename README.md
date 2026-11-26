@@ -4,7 +4,7 @@ An end-to-end machine-learning pipeline for **image classification**: data acqui
 
 | | |
 |---|---|
-| **Video demo** | _TODO: add YouTube link_ |
+| **Video demo** | https://drive.google.com/file/d/1pDeWH9ZOCQvsvCYZWVxVulpGxuZyn7IA/view |
 | **Live URL (UI)** | https://summative-machine-learning-pipeline-prrd.onrender.com/ |
 | **GitHub repo** | https://github.com/b-sandrine/ML_Pipeline_Summative_Classification.git |
 
