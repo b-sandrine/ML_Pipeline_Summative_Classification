@@ -1,0 +1,7 @@
+streamlit>=1.35
+requests>=2.31
+pandas>=2.0
+numpy>=1.26,<2
+pyarrow<20
+matplotlib>=3.8
+seaborn>=0.13

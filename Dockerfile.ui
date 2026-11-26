@@ -1,0 +1,11 @@
+# UI image: Streamlit only (no TensorFlow), talks to the API over HTTP
+FROM python:3.11-slim
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+WORKDIR /app
+COPY requirements-ui.txt .
+RUN pip install -r requirements-ui.txt
+COPY app.py .
+COPY .streamlit .streamlit
+ENV API_URL=http://nginx:8000
+EXPOSE 8501
+CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501", "--server.headless=true"]

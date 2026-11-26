@@ -1,0 +1,17 @@
+.git
+.venv
+.venv311
+__pycache__
+*.py[cod]
+database.db
+data/flower_photos
+data/flower_photos.tgz
+data/train/*
+data/test/*
+!data/train/.gitkeep
+!data/test/.gitkeep
+data/iris.csv
+models/*.joblib
+models/state.json
+notebook
+locust

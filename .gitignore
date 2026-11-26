@@ -23,3 +23,7 @@ models/flower_mobilenet_model.joblib
 # Runtime state (the trained model + feature store ARE committed)
 models/state.json
 locust/results/*.csv_stats_history.csv
+locust/results/*_stats_history.csv
+locust/results/*_failures.csv
+locust/results/*_exceptions.csv
+locust/results/*.log
