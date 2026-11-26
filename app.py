@@ -15,6 +15,8 @@ import seaborn as sns
 import streamlit as st
 
 API_URL = os.getenv("API_URL", "http://localhost:8000").rstrip("/")
+if not API_URL.startswith(("http://", "https://")):  # e.g. Render private "host:port"
+    API_URL = f"http://{API_URL}"
 
 st.set_page_config(page_title="Flower Image MLOps", page_icon="🌼", layout="wide")
 

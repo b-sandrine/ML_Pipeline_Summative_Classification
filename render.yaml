@@ -1,0 +1,26 @@
+# Render Blueprint: New + -> Blueprint -> select this repo.
+# Creates the API (needs >= 2 GB RAM for TensorFlow) and the Streamlit UI.
+services:
+  - type: web
+    name: flower-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: standard
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "8000"
+
+  - type: web
+    name: flower-ui
+    runtime: docker
+    dockerfilePath: ./Dockerfile.ui
+    plan: free
+    envVars:
+      - key: PORT
+        value: "8501"
+      - key: API_URL
+        fromService:
+          type: web
+          name: flower-api
+          property: hostport
