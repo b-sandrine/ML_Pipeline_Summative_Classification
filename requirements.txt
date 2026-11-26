@@ -13,3 +13,4 @@ requests>=2.31
 streamlit>=1.35
 matplotlib>=3.8
 seaborn>=0.13
+pyarrow<20          # newer pyarrow needs NumPy 2; TensorFlow 2.18 needs NumPy 1
