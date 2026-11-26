@@ -11,6 +11,7 @@ from .preprocessing import NOT_FLOWER_LABEL, image_features
 
 _cache: dict = {"mtime": None, "artifact": None}
 _cache_lock = threading.Lock()
+_infer_lock = threading.Lock()  # Keras predict() is not guaranteed re-entrant
 
 
 def get_model() -> dict:
@@ -32,7 +33,9 @@ def predict_image(image_bytes: bytes, model: dict | None = None, top_k: int = 3)
     """
     model = model or get_model()
     estimator = model["estimator"]
-    proba = estimator.predict_proba(image_features(image_bytes))[0]
+    with _infer_lock:
+        features = image_features(image_bytes)
+    proba = estimator.predict_proba(features)[0]
     order = np.argsort(proba)[::-1]
     classes = estimator.classes_
     top = [(str(classes[i]), float(proba[i])) for i in order[:top_k]]
