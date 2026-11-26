@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+.venv311/
+.ipynb_checkpoints/
+database.db
+
+# Raw / split image data is large: re-create it with `python train.py --prepare`
+data/flower_photos/
+data/flower_photos.tgz
+data/train/*
+data/test/*
+!data/train/.gitkeep
+!data/test/.gitkeep
+data/iris.csv
+
+# Legacy artefacts from the earlier Iris / HOG experiments
+models/iris_model.joblib
+models/flower_model.joblib
+models/flower_mobilenet_model.joblib
+
+# Runtime state (the trained model + feature store ARE committed)
+models/state.json
+locust/results/*.csv_stats_history.csv

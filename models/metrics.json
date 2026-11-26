@@ -1,0 +1,150 @@
+{
+  "accuracy": 0.8876860622462788,
+  "macro_precision": 0.7832607257878997,
+  "macro_recall": 0.7744378306878307,
+  "macro_f1": 0.7782608280804034,
+  "weighted_f1": 0.8872109442741016,
+  "roc_auc_ovr": 0.9822262857773074,
+  "log_loss": 0.5340753793716431,
+  "confusion_matrix": [
+    [
+      111,
+      6,
+      0,
+      3,
+      2,
+      4
+    ],
+    [
+      4,
+      169,
+      0,
+      0,
+      6,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      3,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      108,
+      4,
+      13
+    ],
+    [
+      3,
+      4,
+      0,
+      2,
+      128,
+      3
+    ],
+    [
+      1,
+      2,
+      2,
+      12,
+      4,
+      139
+    ]
+  ],
+  "per_class": {
+    "daisy": {
+      "precision": 0.925,
+      "recall": 0.8809523809523809,
+      "f1-score": 0.9024390243902439,
+      "support": 126.0
+    },
+    "dandelion": {
+      "precision": 0.9285714285714286,
+      "recall": 0.9388888888888889,
+      "f1-score": 0.9337016574585635,
+      "support": 180.0
+    },
+    "not_flower": {
+      "precision": 0.25,
+      "recall": 0.2,
+      "f1-score": 0.2222222222222222,
+      "support": 5.0
+    },
+    "roses": {
+      "precision": 0.84375,
+      "recall": 0.84375,
+      "f1-score": 0.84375,
+      "support": 128.0
+    },
+    "sunflowers": {
+      "precision": 0.8888888888888888,
+      "recall": 0.9142857142857143,
+      "f1-score": 0.9014084507042254,
+      "support": 140.0
+    },
+    "tulips": {
+      "precision": 0.8633540372670807,
+      "recall": 0.86875,
+      "f1-score": 0.8660436137071651,
+      "support": 160.0
+    },
+    "accuracy": 0.8876860622462788,
+    "macro avg": {
+      "precision": 0.7832607257878997,
+      "recall": 0.7744378306878307,
+      "f1-score": 0.7782608280804034,
+      "support": 739.0
+    },
+    "weighted avg": {
+      "precision": 0.8870418776049183,
+      "recall": 0.8876860622462788,
+      "f1-score": 0.8872109442741016,
+      "support": 739.0
+    }
+  },
+  "classes": [
+    "daisy",
+    "dandelion",
+    "not_flower",
+    "roses",
+    "sunflowers",
+    "tulips"
+  ],
+  "train_accuracy": 1.0,
+  "trained_at": "2026-11-26T11:08:46.582206+00:00",
+  "train_image_count": 2952,
+  "test_image_count": 739,
+  "image_count": 3691,
+  "train_class_counts": {
+    "daisy": 507,
+    "dandelion": 718,
+    "not_flower": 19,
+    "roses": 513,
+    "sunflowers": 557,
+    "tulips": 638
+  },
+  "test_class_counts": {
+    "daisy": 126,
+    "dandelion": 180,
+    "not_flower": 5,
+    "roses": 128,
+    "sunflowers": 140,
+    "tulips": 160
+  },
+  "class_counts": {
+    "daisy": 633,
+    "dandelion": 898,
+    "not_flower": 24,
+    "roses": 641,
+    "sunflowers": 697,
+    "tulips": 798
+  },
+  "new_images_embedded": 3691,
+  "fit_seconds": 0.18,
+  "trigger": "cli"
+}

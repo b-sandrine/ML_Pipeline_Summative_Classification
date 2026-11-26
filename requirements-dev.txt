@@ -1,0 +1,6 @@
+-r requirements.txt
+locust>=2.20
+jupyter
+nbconvert
+ipykernel
+httpx

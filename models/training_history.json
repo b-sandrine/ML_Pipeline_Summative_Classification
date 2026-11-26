@@ -1,0 +1,13 @@
+[
+  {
+    "trained_at": "2026-11-26T11:08:46.582206+00:00",
+    "accuracy": 0.8876860622462788,
+    "macro_precision": 0.7832607257878997,
+    "macro_recall": 0.7744378306878307,
+    "macro_f1": 0.7782608280804034,
+    "train_image_count": 2952,
+    "test_image_count": 739,
+    "fit_seconds": 0.18,
+    "trigger": "cli"
+  }
+]
